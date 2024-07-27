@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-4 ">
+            <p class="fw-semi-bold mb-0">Home/Cart</p>
+            <p class="display-3">Cart</p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <p class="fw-semi-bold ">Showing {{cartLength}} types products that you added.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Cart-List
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">SubTotal</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let itemData of cartItems" >
+                                <td class="data-td btn-td"><button class="btn btn-danger" (click)="deleteCartItem(itemData.cartId)">Remove</button></td>
+                                <td class="img-col-cart">
+                                    <a routerLink="/item/{{itemData.itemId}}"><img
+                                            src="{{img_path}}{{itemData.category}}/{{itemData.brandName}}_{{itemData.category}}_{{itemData.name}}.png"
+                                            class="card-img-top cart-product-img"
+                                            alt='{{itemData.category}}_{{itemData.name}}' /></a>
+                                </td>
+                                <td class="data-td">{{itemData.brandName}}_{{itemData.name}}</td>
+                                <td class="data-td">{{itemData.price}}</td>
+                                <td class="data-td">{{itemData.quantity}}</td>
+                                <td class="data-td">{{itemData.subTotal}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-end">
+                    <P class="me-4">Total Cost : {{totalCost}}</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

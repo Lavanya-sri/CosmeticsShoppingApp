@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5 ">
+            <p class="fw-semi-bold mb-0">Home/{{categoryName}}</p>
+            <p class="display-3">{{categoryName}}</p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <p class="fw-semi-bold ">Showing {{categoryItems.length}} Products</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-12" *ngFor="let itemData of categoryItems">
+            <div  class="card border border-0 mb-3" style="width: 18rem;">
+                <p id="path"></p>
+                <a routerLink="/item/{{itemData.itemId}}"
+                        ><img
+                    src="{{img_path}}{{itemData.category}}/{{itemData.brands['name']}}_{{itemData.category}}_{{itemData.name}}.png"
+                    class="card-img-top product-img"
+                    alt='{{itemData.category}}_{{itemData.name}}' /></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{itemData.category}}</h5>
+                    <p>{{itemData.brands['name']}}_{{itemData.name}}</p>
+                    <p>Price:{{itemData.price}}</p>
+                    <!-- <a routerLink="/item/{{item.itemId}}"
+                        class="btn btn-secondary">view product</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row ms-2" style="margin-top: 5rem;">
+        <div class="col-lg-6 col-sm-12">
+            <div class="card border border-0 mb-3" style="width: 100%; ">
+                <p id="path"></p>
+                <div class="card-header">
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-container *ngFor="let slide of item_images">
+                            <ng-template carouselSlide [id]="slide.id">
+                                <img class="item-img" [src]="slide.path"
+                                    [alt]="slide.id">
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <p class="fw-semi-bold my-3">Home / {{item.category}} /
+                {{item.name}}</p>
+            <p class="h5 fw-semi-bold">{{item.category}}</p>
+            <p class="display-6 fw-bold my-4">{{item.brands['name']}}_{{item.name}}</p>
+            <p class="h5  fw-bold"><del class="fw-light me-4">RS.{{item.orgPrice}}</del>RS.{{item.price}}</p>
+            <p class="fs-6 fw-light mt-3">A daily skin care regimen is required
+                to keep your skin healthy and feeling fresh throughout the day.
+                With these body and face care products you can ensure that you
+                retain your youthful glow easily. Choose from a range of
+                products like face wash, toners, sunscreens, moisturisers, and
+                more and pick the ones most suited to your needs. </p>
+            <p class="fs-6 fw-light my-3">Check the prices of these full-body
+                skin care
+                products online and choose the products according to your
+                requirements. Browse the e-store website to check the reviews,
+                and ratings before making a purchase. You can also gift these
+                skin care products to family and friends to put a smile on their
+                faces. Place an order online for easy doorstep delivery.</p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-success"
+                    (click)="decrement()" style="width: 4rem; height:3rem;">-</button>
+                <span
+                    class="d-flex align-items-center justify-content-center fs-4"
+                    style="width: 4rem; height:3rem;">{{quantity}}</span>
+                <button type="button" class="btn btn-outline-success"
+                    (click)="increment()" style="width: 4rem;height:3rem;">+</button>
+            </div>
+            <button class="btn btn-dark mx-4 my-3"
+                (click)="saveForm(item,quantity)" id="liveToastBtn">Add to Cart
+            </button>
+            <div *ngIf="show" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" >  
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
+                  <div class="toast-header">  
+                    <strong class="me-auto">{{item.brands['name']}}_{{item.name}} Added to Cart</strong>  
+                    <small class="text-muted">Just now</small>  
+                    <button type="button" class="btn-close"  aria-label="Close" (click)="hideToast()"></button>  
+                  </div>  
+                  <div class="toast-body" style="background: #e3dfdf;">  
+                    For more Details: <a routerLink="/cart" routerLinkActive="active">View Cart</a> 
+                  </div>  
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div *ngIf="colorItems.length>0" class="row">
+        <div class="col-12">
+            <p class="display-5 fw-semi-bold">People also buying</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-12" *ngFor="let itemData of colorItems">
+            <div class="card border border-0 mb-3" style="width: 18rem;">
+                <p id="path"></p>
+                <a routerLink="/item/{{itemData.itemId}}"><img
+                        src="{{img_path}}{{itemData.category}}/{{itemData.brands['name']}}_{{itemData.category}}_{{itemData.name}}.png"
+                        class="card-img-top people-product-img"
+                        alt='{{itemData.category}}_{{itemData.name}}' /></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{itemData.category}}</h5>
+                    <p>{{itemData.name}}</p>
+                    <p>Price:{{itemData.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="categoryItems.length>0" class="row my-3">
+        <div class="col-12">
+            <p class="display-5 fw-semi-bold">Similar Products</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-12" *ngFor="let itemData of categoryItems">
+            <div class="card border border-0 mb-3" style="width: 18rem;">
+                <p id="path"></p>
+                <a routerLink="/item/{{itemData.itemId}}"><img
+                        src="{{img_path}}{{itemData.category}}/{{itemData.brands['name']}}_{{itemData.category}}_{{itemData.name}}.png"
+                        class="card-img-top people-product-img"
+                        alt='{{itemData.category}}_{{itemData.name}}' /></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{itemData.category}}</h5>
+                    <p>{{itemData.name}}</p>
+                    <p>Price:{{itemData.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<div>
+    <div  class="  conatiner-fluid display  mb-5 ">
+        <div>
+        <div class="p fw-bold h6">
+            New in town
+        </div >
+        <p class="p h2">
+            The new beauty collection 
+        </p>
+        <p class="p h1">
+            This new collection brings with it the most exciting lorem ipsum dolor sit amet.
+        </p>
+        <a routerLink="/shop-all" routerLinkActive="active"><button>Shop now</button></a>
+        </div>
+    </div>
+    <!-- <app-home-section-two></app-home-section-two> -->
+    <div class="container">
+        <div class="row">
+          <div *ngFor="let brand of brands" class="col-3">
+            <div class="card border border-0" style="width: 18rem; ">
+              <img
+                src="{{img_path}}{{brand.name}}.png"
+                class="card-img-top img"
+                alt='{{brand.name}}_image' style="height: 150px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- <app-home-section-three></app-home-section-three> -->
+    <div class="container-fluid mt-5 ">
+        <div class="row ">
+          <div class="h6 text-center text-secondary">POPULAR PRODUCTS</div>
+          <div class="h1 text-center">Trending Now</div>
+        </div>
+        <div class="row mt-5 ms-4">
+          <div *ngFor="let item of popularItems" class="col-3">
+            <div class="card border border-0" style="width: 18rem; ">
+              <a routerLink="/item/{{item.itemId}}"
+                              ><img
+                          src="{{img_path2}}{{item.category}}/{{item.brands['name']}}_{{item.category}}_{{item.name}}.png"
+                          class="card-img-top img"
+                          alt='{{item.category}}_{{item.name}}' style="height: 300px;"/></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.category}}</h5>
+                  <p>{{item.brands['name']}}_{{item.name}}</p>
+                  <p>Price:{{item.price}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    <!-- <app-home-section-four></app-home-section-four> -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="h6 text-center text-secondary">SHOP</div>
+            <div class="h1 text-center">Best Selling</div>
+        </div>
+        <div class="row mt-5 ms-4">
+          <div *ngFor="let item of bestSellingItems" class="col-3">
+            <div class="card border border-0" style="width: 18rem; ">
+              <a routerLink="/item/{{item.itemId}}"
+                              ><img
+                          src="{{img_path2}}{{item.category}}/{{item.brands['name']}}_{{item.category}}_{{item.name}}.png"
+                          class="card-img-top img"
+                          alt='{{item.category}}_{{item.name}}' style="height: 300px;"/></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.category}}</h5>
+                  <p>{{item.brands['name']}}_{{item.name}}</p>
+                  <p>Price:{{item.price}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!-- <app-home-section-five></app-home-section-five> -->
+    <div  class="  conatiner-fluid display-second-label mt-5 mb-5 ">
+        <div>
+        <div class="p fw-bold pt-">
+            New in town
+        </div >
+        <p class="p">
+            The new beauty collection 
+        </p>
+        <p class="p">
+            This new collection brings with it the most exciting lorem ipsum dolor sit amet.
+        </p>
+        <a routerLink="/shop-all" routerLinkActive="active"><button>Shop now</button></a>
+        </div>
+    </div>
+
+    <!-- <app-home-section-six></app-home-section-six> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="h6 text-secondary">Cosmetics</div>
+                <div class="h1 ">Cosmetics enhance one's appearance to conceal blemishes....</div>
+            </div>
+            <div class="col-5 mt-4 ms-1">
+                <div>
+                    <div>The word cosmetics is derived from the Greek κοσμητικὴ τέχνη (kosmetikē tekhnē), meaning "technique of dress and ornament," from κοσμητικός (kosmētikos), "skilled in ordering or arranging,"[3] and from κόσμος (kosmos), meaning </div>
+                    <div class="text-secondary">"order" and "ornament"</div>
+                    <div class=" border-top" style="height: 2px; width:70px"></div>
+                </div>
+                <div>
+                    <div>Though the legal definition of cosmetics in most countries is broader, in some Western countries, cosmetics are commonly taken to mean only makeup products, such as lipstick, mascara, eye shadow, foundation, blush, highlighter, bronzer, and several other product types</div>
+                </div>
+                <div>
+                    <div>Though the legal definition of cosmetics in most countries is broader, in some Western countries, cosmetics are commonly taken to mean only makeup products, such as lipstick, mascara, eye shadow, foundation, blush, highlighter, bronzer, and several other product types.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

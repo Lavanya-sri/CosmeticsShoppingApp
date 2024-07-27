@@ -1,0 +1,33 @@
+<div class="container-fluid bg-secondary shadow-3" style="height: 100px;">
+    <div class="row">
+        <div class="col-10 pt-4">
+            <ul>
+                <li><a routerLink="/home" routerLinkActive="active">BE_BOLD</a></li>
+                <li><a routerLink="/shop-all" routerLinkActive="active">Shop_All</a></li>
+                <li><a routerLink="/category/{{conditioner}}" routerLinkActive="active">Conditioner</a></li>
+                <li><a routerLink="/category/{{moisturizer}}" routerLinkActive="active">moisturizer</a></li>
+                <li><a routerLink="/category/{{lipstick}}" routerLinkActive="active">lipstick</a></li>
+            </ul>
+        </div>
+        <div class="col-2 pt-4">
+            <ul>
+                <li>
+                    <a routerLink="/cart" routerLinkActive="active"><button type="button" class="btn btn-primary position-relative">
+                        Cart
+                        <span *ngIf="this.cartService.cartLength>0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          {{this.cartService.cartLength}}
+                        </span>
+                    </button>
+                    </a>
+                </li>
+                <li>
+                    <a  (click)="logout()"><button type="button" class="btn btn-danger position-relative">
+                        Logout
+                    </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>

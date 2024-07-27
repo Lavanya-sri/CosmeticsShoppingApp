@@ -1,0 +1,34 @@
+ul li{
+    list-style: none;
+    
+    
+}
+ul{
+    margin: 0;
+}
+ul li a{
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    height:50px;
+    
+
+}
+a{
+    line-height: 40px;
+    margin-right: 3rem;
+    
+}
+.container{
+    width: auto;
+    height: 70px;
+    padding: auto;
+    margin-top: 0;
+    border:black 5px;
+    display: flex;
+    justify-content: center;
+}
+.active{
+    color:pink;
+}

@@ -1,0 +1,32 @@
+.display
+{
+    background-image: url('https://img.freepik.com/free-photo/collection-beauty-products-with-copy-space_23-2148620110.jpg?w=2000');
+    background-repeat : no-repeat, repeat;
+    background-color : hsla(9, 100%, 64%, 0.5);
+    height: 600px;
+    width: 100%;
+    background-size: cover; 
+    filter: blur(px);
+  
+}
+p{
+    font-family: "fantasy";
+    
+}
+.display-second-label
+{
+    background-image: url('https://img.freepik.com/free-photo/collection-beauty-products-with-copy-space_23-2148620110.jpg?w=2000');
+    background-repeat : no-repeat, repeat;
+    background-color : hsla(9, 100%, 64%, 0.5);
+    height: 600px;
+    width: 100%;
+    background-size: cover; 
+    filter: blur(px);
+  
+}
+.line{
+    width: 10px;
+    height: 10px;
+    border: 2px;
+    border-color: black;
+}

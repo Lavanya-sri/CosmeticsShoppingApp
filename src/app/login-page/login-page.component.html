@@ -1,0 +1,39 @@
+<div class="main mx-auto mt-5">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+        <form [formGroup]="signUpForm" (ngSubmit)="userSignUp()">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input formControlName="firstName" type="text" name="txt" placeholder="First name" required="">
+            <input formControlName="lastName" type="text" name="txt" placeholder="Last name" required="">
+            <input formControlName="email" type="email" name="email" placeholder="Email" required="">
+            <input formControlName="password" type="password" name="pswd" placeholder="Password" required="">
+            <button >Sign up</button>
+        </form>
+    </div>
+
+    <div class="login">
+        <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+            <label for="chk" aria-hidden="true">Login</label>
+            <input formControlName="email"    [(ngModel)]="email"   type="email" name="email" placeholder="Email" required>
+            <input formControlName="password" [(ngModel)]="password"   type="password" name="pswd" placeholder="Password" required>
+            <button>Login</button>
+        </form>
+    </div>
+</div>
+
+<div *ngIf="show" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" >  
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
+      <div class="toast-header">  
+        <strong class="me-auto" [ngClass]="errorStatus ? 'error' : 'success' ">{{errorTitle}}</strong>  
+        <small class="text-muted">Just now</small>  
+        <span type="button" class="btn-close"  aria-label="Close" (click)="hideToast()"></span>  
+      </div>  
+      <div class="toast-body" style="background: #e3dfdf;">  
+        {{errorMessage}}
+      </div>  
+    </div>  
+</div>
+
+
+
+

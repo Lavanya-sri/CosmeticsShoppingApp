@@ -1,0 +1,8 @@
+<p>about works!</p>
+<div>
+    <ul *ngFor="let elements of mobiles">
+        <li>{{elements}}</li>
+    </ul>
+</div>
+<div><span>Status:<P *ngIf="serviceData.indicator">Complted</P><P *ngIf="!serviceData.indicator">Pending</P></span></div>
+<button (click)="serviceData.activate()">click</button>
